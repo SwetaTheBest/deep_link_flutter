@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "633980221376",
+    "project_id": "link-sweta",
+    "storage_bucket": "link-sweta.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:633980221376:android:bcdf9981f436c6303c3a25",
+        "android_client_info": {
+          "package_name": "com.swetajain.deep_link_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "633980221376-m82nm9p2o4l3t0fvkrf65m1du066ngtq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.swetajain.deep_link_flutter",
+            "certificate_hash": "348835b84d4ba42452ecbbacd646f858ac4dacb3"
+          }
+        },
+        {
+          "client_id": "633980221376-plarbkmd97gtgvkfuu5tt4i5ksn43qjf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPzoA9bR0Fnk5EZTfMMUbGq-rF_WEjT6A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "633980221376-plarbkmd97gtgvkfuu5tt4i5ksn43qjf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
