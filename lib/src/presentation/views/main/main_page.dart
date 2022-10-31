@@ -22,9 +22,12 @@ class _MainPageState extends State<MainPage> {
   @override
   void initState() {
     super.initState();
-    // initDynamicLink();
+    initDynamicLink();
   }
 
+  /// Function to get/receive the data from the dynamic link
+  /// checks if the query params are available and
+  /// redirects to the page respectively
   Future<void> initDynamicLink() async {
     dynamicLinks.onLink.listen((dynamicLinkData) {
       final Uri uri = dynamicLinkData.link;
@@ -33,27 +36,21 @@ class _MainPageState extends State<MainPage> {
         String? productId = queryParams['id'];
         Navigator.restorablePushNamed(context, dynamicLinkData.link.path,
             arguments: {"productId": int.parse(productId!)});
-        print('...........');
         print(dynamicLinkData.link.path);
       } else {
         Navigator.restorablePushNamed(context, dynamicLinkData.link.path);
-        print('...........');
-
         print(dynamicLinkData.link.path);
       }
     }).onError((error) {
       if (kDebugMode) {
-        print('...........');
-
-        print(
-            '...........init dynamic link error.............................');
-        print('...........');
-
         print(error);
       }
     });
   }
 
+  /// Function to create the dynamic link
+  /// checks if the query params are available and
+  /// redirects to the page respectively
   Future<void> _createDynamicLink(bool short, String link) async {
     setState(() {
       _isCreatingLink = true;
@@ -98,12 +95,23 @@ class _MainPageState extends State<MainPage> {
                           onPressed: !_isCreatingLink
                               ? () => _createDynamicLink(false, kHomepageLink)
                               : null,
-                          child: const Text("Get Long Link")),
+                          child: const Text("Get Long Link for Home")),
                       ElevatedButton(
                           onPressed: !_isCreatingLink
                               ? () => _createDynamicLink(true, kHomepageLink)
                               : null,
-                          child: const Text("Get Short Link")),
+                          child: const Text("Get Short Link for Home")),
+                      ElevatedButton(
+                          onPressed: !_isCreatingLink
+                              ? () =>
+                                  _createDynamicLink(false, kProductpageLink)
+                              : null,
+                          child: const Text("Get Long Link for Product Page")),
+                      ElevatedButton(
+                          onPressed: !_isCreatingLink
+                              ? () => _createDynamicLink(true, kProductpageLink)
+                              : null,
+                          child: const Text("Get Short Link for Product Page")),
                     ],
                   ),
                   InkWell(
